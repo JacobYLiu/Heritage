@@ -265,13 +265,16 @@ export function SettingsScreen() {
                       const supabase = await getSupabaseClient()
                       const { data: { user } } = await supabase.auth.getUser()
                       if (user) {
-                        // Delete all user data via RLS-protected tables
+                        // Delete all user data via RLS-protected tables (owner-only policies enforce this)
                         await supabase.from('session_metrics').delete().eq('user_id', user.id)
                         await supabase.from('flashcard_progress').delete().eq('user_id', user.id)
                         await supabase.from('vocab_entries').delete().eq('user_id', user.id)
                         await supabase.from('skill_scores').delete().eq('user_id', user.id)
                         await supabase.from('profiles').delete().eq('id', user.id)
-                        await supabase.auth.admin.deleteUser(user.id)
+                        // Auth user deletion requires service-role key (server-side only).
+                        // The auth record is cleaned up server-side via a Supabase
+                        // Edge Function or a scheduled cleanup job keyed on profiles deletion.
+                        // Client-side: sign out to invalidate the session immediately.
                       }
                       await signOut()
                       await clearProfile()

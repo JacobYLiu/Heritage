@@ -22,32 +22,37 @@ const DOT_RADIUS = 3
 const LINE_THICKNESS = 2
 
 /**
- * Render a single line segment between two normalised (0–1) coordinates.
- * Uses absolute positioning + rotation to avoid SVG dependency.
+ * Render a single line segment between two pixel coordinates.
+ * Uses center-based positioning so the default transform origin (center) is correct.
+ * This avoids needing transformOrigin which is not in React Native's ViewStyle type.
  */
 function LineSegment({
-  x1, y1, x2, y2, color, width,
+  x1, y1, x2, y2, color,
 }: {
   x1: number; y1: number; x2: number; y2: number
-  color: string; width: number
+  color: string
 }) {
   const dx = x2 - x1
   const dy = y2 - y1
   const length = Math.sqrt(dx * dx + dy * dy)
   const angle = Math.atan2(dy, dx) * (180 / Math.PI)
 
+  // Position the center of the segment at the midpoint of (x1,y1)–(x2,y2).
+  // React Native rotates around the center by default, so we don't need transformOrigin.
+  const cx = (x1 + x2) / 2
+  const cy = (y1 + y2) / 2
+
   return (
     <View
       style={{
         position: 'absolute',
-        left: x1,
-        top: y1 - LINE_THICKNESS / 2,
+        left: cx - length / 2,
+        top: cy - LINE_THICKNESS / 2,
         width: length,
         height: LINE_THICKNESS,
         backgroundColor: color,
         borderRadius: LINE_THICKNESS / 2,
         transform: [{ rotate: `${angle}deg` }],
-        transformOrigin: '0% 50%',
         opacity: 0.85,
       }}
     />
@@ -107,7 +112,6 @@ export function SkillTrendChart({ data, activeSkill, color }: SkillTrendChartPro
                 x2={toX(i + 1)}
                 y2={toY(scores[i + 1])}
                 color={color}
-                width={LINE_THICKNESS}
               />
             ))}
 
