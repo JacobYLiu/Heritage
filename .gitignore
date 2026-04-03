@@ -1,0 +1,24 @@
+# Expo / React Native
+app/node_modules/
+app/.expo/
+app/dist/
+app/.env*
+
+# iOS
+app/ios/Pods/
+app/ios/build/
+
+# Android
+app/android/.gradle/
+app/android/build/
+app/android/app/build/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
