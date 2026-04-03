@@ -18,17 +18,17 @@
 
 ## Phase 1 — Foundation: Language Selection, Skill Model, Flashcards
 
-- [ ] **Step 1.1** — TypeScript types (`src/types/index.ts` — all domain interfaces, no `any`)
-- [ ] **Step 1.2** — Supabase database migrations (`001_initial_schema.sql`, `002_rls_policies.sql`, `003_indexes.sql`)
-- [ ] **Step 1.3** — Auth screens (WelcomeScreen, SignUpScreen, SignInScreen + `src/services/auth.ts`)
-- [ ] **Step 1.4** — Onboarding: language selection & skill model seed (StepLanguage, StepBackground, StepConfidence, StepWelcome + `useOnboarding.ts` + `skillModelSeed.ts`)
-- [ ] **Step 1.5** — Global state stores (`userStore.ts` persisted to SecureStore, `sessionStore.ts` in-memory)
-- [ ] **Step 1.6** — App name localization utility (`src/utils/appName.ts`)
-- [ ] **Step 1.7** — Home dashboard screen (HomeScreen + StreakDots, LessonCard, SkillBars, AppHeader components)
-- [ ] **Step 1.8** — Passive skill model engine (`src/utils/skillModel.ts` — `updateSkillScore`, `getRecommendedContent`)
-- [ ] **Step 1.9** — Flashcard drill (DrillScreen, CardFront, CardBack + `src/services/fsrs.ts` + `useDrill.ts`)
-- [ ] **Step 1.10** — Vocabulary list screen (VocabScreen, VocabDetail, VocabRow + `useVocab.ts`)
-- [ ] **Step 1.11** — Session summary screen (`SessionSummary.tsx`, MetricCard, `sessionTips.ts`)
+- [x] **Step 1.1** — TypeScript types (`src/types/index.ts` — all domain interfaces, no `any`)
+- [x] **Step 1.2** — Supabase database migrations (`001_initial_schema.sql`, `002_rls_policies.sql`, `003_indexes.sql`)
+- [x] **Step 1.3** — Auth screens (WelcomeScreen, SignUpScreen, SignInScreen + `src/services/auth.ts`)
+- [x] **Step 1.4** — Onboarding: language selection & skill model seed (StepLanguage, StepBackground, StepConfidence, StepWelcome + `useOnboarding.ts` + `skillModelSeed.ts`)
+- [x] **Step 1.5** — Global state stores (`userStore.ts` persisted to SecureStore, `sessionStore.ts` in-memory)
+- [x] **Step 1.6** — App name localization utility (`src/utils/appName.ts`)
+- [x] **Step 1.7** — Home dashboard screen (HomeScreen + StreakDots, LessonCard, SkillBars, AppHeader components)
+- [x] **Step 1.8** — Passive skill model engine (`src/utils/skillModel.ts` — `updateSkillScore`, `getRecommendedContent`)
+- [x] **Step 1.9** — Flashcard drill (DrillScreen, CardFront, CardBack + `src/services/fsrs.ts` + `useDrill.ts`)
+- [x] **Step 1.10** — Vocabulary list screen (VocabScreen, VocabDetail, VocabRow + `useVocab.ts`)
+- [x] **Step 1.11** — Session summary screen (`SessionSummary.tsx`, MetricCard, `sessionTips.ts`)
 
 ---
 
