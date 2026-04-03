@@ -34,23 +34,23 @@
 
 ## Phase 2 — AI Features: Roleplay, Speaking, Full Skill Model
 
-- [ ] **Step 2.1** — Add AI service secrets (update `src/config/secrets.ts` with Claude, Whisper, ElevenLabs getters)
-- [ ] **Step 2.2** — Claude API service (`src/services/claude.ts` — `sendRoleplayTurn`)
-- [ ] **Step 2.3** — All Claude system prompts (`roleplayFamilyCharacter.ts`, `pronunciationTip.ts`, `sessionInsight.ts`)
-- [ ] **Step 2.4** — Whisper speech-to-text service (`src/services/whisper.ts`)
-- [ ] **Step 2.5** — ElevenLabs TTS service (`src/services/elevenlabs.ts` with audio cache)
-- [ ] **Step 2.6** — Scenario definitions — all 27 (`src/constants/scenarios.ts`)
-- [ ] **Step 2.7** — Roleplay scenario screens (ScenarioList, ScenarioIntro, RoleplaySession, FeedbackOverlay, ScenarioSummary + `useRoleplay.ts`)
-- [ ] **Step 2.8** — Upgrade passive skill model with real speech signals (update `src/utils/skillModel.ts`)
-- [ ] **Step 2.9** — Dedicated listening practice screen (ListeningScreen, AudioPlayer + `useListening.ts`)
+- [x] **Step 2.1** — Add AI service secrets (all 5 getters already in `src/config/secrets.ts` from Pre-Phase)
+- [x] **Step 2.2** — Claude API service (`src/services/claude.ts` — `sendRoleplayTurn`, `generateSessionInsight`, 3-retry + zh dual-script normalization)
+- [x] **Step 2.3** — All Claude system prompts (`roleplayFamilyCharacter.ts`, `pronunciationTip.ts`, `sessionInsight.ts`)
+- [x] **Step 2.4** — Whisper speech-to-text service (`src/services/whisper.ts` — verbose_json, word confidences, language hint)
+- [x] **Step 2.5** — ElevenLabs TTS service (`src/services/elevenlabs.ts` — djb2 hash cache via expo-file-system/legacy)
+- [x] **Step 2.6** — Scenario definitions — all 27 (`src/constants/scenarios.ts` — 9×zh, 9×ja, 9×ko per AI_Rules.md §7)
+- [x] **Step 2.7** — Roleplay scenario screens (ScenarioList, ScenarioIntro, RoleplaySession, FeedbackOverlay, ScenarioSummary + `useRoleplay.ts`)
+- [x] **Step 2.8** — Upgrade passive skill model (all 5 signals already wired in `skillModel.ts` from Phase 1)
+- [x] **Step 2.9** — Dedicated listening practice screen (ListeningScreen, AudioPlayer + `useListening.ts`)
 
 ---
 
 ## Phase 3 — Depth, Polish & Production
 
-- [ ] **Step 3.1** — Honorifics & family address term module (HonorificsScreen + `src/constants/familyTerms.ts`)
-- [ ] **Step 3.2** — Skill trend chart & full profile screen (SkillProfileScreen + SkillTrendChart SVG)
-- [ ] **Step 3.3** — Cantonese scaffolding — structure only (`src/assets/audio/yue/`, voice ID placeholder)
-- [ ] **Step 3.4** — Settings screen (SettingsScreen — language switch, Chinese script toggle, reminders, delete account)
-- [ ] **Step 3.5** — Offline mode (`src/services/offlineCache.ts` — flashcard deck + audio pre-download)
-- [ ] **Step 3.6** — Production hardening (Sentry, App Store metadata, accessibility audit, performance audit, security audit)
+- [x] **Step 3.1** — Honorifics & family address term module (HonorificsScreen + `src/constants/familyTerms.ts`)
+- [x] **Step 3.2** — Skill trend chart & full profile screen (SkillProfileScreen + SkillTrendChart SVG)
+- [x] **Step 3.3** — Cantonese scaffolding — structure only (`src/assets/audio/yue/`, voice ID placeholder)
+- [x] **Step 3.4** — Settings screen (SettingsScreen — language switch, Chinese script toggle, reminders, delete account)
+- [x] **Step 3.5** — Offline mode (`src/services/offlineCache.ts` — flashcard deck + audio pre-download)
+- [x] **Step 3.6** — Production hardening (Sentry, App Store metadata, accessibility audit, performance audit, security audit)

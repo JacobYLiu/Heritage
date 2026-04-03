@@ -78,9 +78,24 @@ export function HomeScreen() {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.skillSection} onPress={() => {}}>
-          <Text style={styles.sectionTitle}>Your skills</Text>
+        <TouchableOpacity style={styles.skillSection} onPress={() => router.push('/(modal)/skill-profile')} activeOpacity={0.8}>
+          <View style={styles.skillSectionHeader}>
+            <Text style={styles.sectionTitle}>Your skills</Text>
+            <Text style={styles.seeAll}>View profile ›</Text>
+          </View>
           <SkillBars skillScore={profile.skillScores} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.honorificsRow}
+          onPress={() => router.push('/(modal)/honorifics')}
+          activeOpacity={0.7}
+        >
+          <View style={styles.honorificsText}>
+            <Text style={styles.honorificsTitle}>Honorifics & Family Terms</Text>
+            <Text style={styles.honorificsSubtitle}>Address terms, suffixes & speech levels</Text>
+          </View>
+          <Text style={styles.honorificsArrow}>›</Text>
         </TouchableOpacity>
 
       </ScrollView>
@@ -98,4 +113,18 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 16, fontWeight: '600', color: '#1A1A1A' },
   cards: { gap: 10 },
   skillSection: { gap: 12 },
+  skillSectionHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  seeAll: { fontSize: 13, color: '#888888' },
+  honorificsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F8F8F8',
+    borderRadius: 12,
+    padding: 16,
+    gap: 12,
+  },
+  honorificsText: { flex: 1, gap: 2 },
+  honorificsTitle: { fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
+  honorificsSubtitle: { fontSize: 13, color: '#888888' },
+  honorificsArrow: { fontSize: 22, color: '#AAAAAA', fontWeight: '300' },
 })
